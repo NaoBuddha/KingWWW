@@ -1,0 +1,575 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+
+
+}
+:root{
+    --bg-color: #2a2a2a;
+    --second-bg-color: #202020;
+    --text-color: rgb(2, 2, 2);
+    --second-color: rgb(5, 5, 5);
+    --main-color: #ff4d05;
+    --big_font: 5rem;
+    --h2-font: 3rem;
+    --p-font: 1.1rem;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 22px 15%;
+    border-bottom: 1px solid transparent;
+    transition: all .40s ease;
+}
+
+.logo{
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+
+}
+.navlist{
+    display: flex;
+
+
+
+
+
+}    
+.navlist a{
+    color: var(--second-color);
+    font-size: 17px;
+    font-weight: 750;
+    margin: 0 25px;
+    transition: all .40s ease;
+
+
+}
+.navlist a:hover{
+    color: var(--main-color);
+}
+.navlist a.active{
+    color: var(--main-color);
+}
+#menu-icon{
+    font-size: 35px;
+    color: var(--text-color);
+    z-index: 10001;
+    cursor: pointer;
+    margin-left: 25px;
+    display: none;
+
+
+}
+
+section{
+    padding: 160px 15% 120px;
+}
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/back.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+.slide{
+    margin-bottom: 20px;
+
+}
+.one{
+    display: inline-block;
+    margin-right: 15px;
+    height: 32px;
+    padding: 0 15px;
+    line-height: 32px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: var(--main-color);
+    color: var(--text-color);  
+}
+.two{
+    display: inline-block;
+    color: var(--second-color);
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+.home-text h1{
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--text-color);
+    list-style: 1.1;
+    margin: 0 0 8px;
+}
+.home-text p{
+    color: var(--second-color);
+    font-size: var(--p-font);
+    line-height: 1.8;
+    margin-bottom: 40pxpx;
+}
+header.sticky{
+    background: #8a8989;
+    border-bottom: 1px solid #ffffff1a;
+    padding: 12px 15%;
+}
+
+
+/*Home for mobile*/
+@media (max-width: 1480px){
+	header{
+		padding: 12px 2.5%;
+		transition: .1s;
+	}
+	header.sticky{
+		padding: 10px 2.5%;
+		transition: .1s;;
+	}
+	section{
+		padding: 110px 3% 60px;
+	}
+	
+}
+@media (max-width: 1100px){
+	:root{
+		--big-font: 4rem;
+	  --h2-font: 2.5rem;
+	  --p-font: 1rem;
+	  transition: .1s;
+	}
+	.home-text h1{
+		font-size: 2.5rem;
+	}
+	.home{
+		height: 100vh;
+	}
+}
+@media (max-width: 920px){ /*side navigation bar. body is used to hide bar which is out of bounds(out of screen)*/
+    #menu-icon{
+		display: block;
+	}
+    header{
+        background: #8a8989;
+        border-bottom: 1px solid #ffffff1a;
+        padding: 12px 15%;
+    }
+    body{
+        overflow-x: hidden;
+    }
+	.navlist{
+		position: absolute;
+		top: 8vh;
+		right: 0;
+		
+		display: flex;
+		flex-direction: column;
+		background: #8a8989;
+		text-align: center;
+		transition: all .45s ease;
+        width: 40%;
+        transform: translateX(100%);/*Puts the bar 'outside' of the screen*/
+
+	}
+    
+	.navlist a{
+		display: block;
+		margin: 17px;
+		font-size: 20px;
+		transition: all .45s ease;
+		color: var(--text-color);
+	}
+	.navlist a:hover{
+		color: var(--main-color);
+	}
+	.navlist-active{
+		transform: translateX(0%);
+        opacity: 10;
+        
+	}
+	.navlist.open{
+		top: 100%;
+	}
+}
+
+/*bio page design*/
+
+
+.bio{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    color: #ffffff;
+}
+.bio-img img{
+	max-width: 430px;
+	height: auto;
+	width: 100%;
+	border-radius: 8px;
+}
+.bio-text h2{
+	font-size: var(--h2-font);
+	line-height: 1;
+    
+    
+}
+
+.bio-navlist{
+    display: flex;
+
+} 
+.bio-navlist a{
+    color: #5947fd;
+    font-size: 17px;
+    font-weight: 750;
+    margin: 0 25px;
+    transition: all .40s ease;
+
+
+}
+.bio-navlist a:hover{
+    color: #79f7b8;
+}
+.bio-navlist a.active{
+    color: #79f7b8;
+}
+.bio-one{
+    display: inline-block;
+    margin-right: 15px;
+    height: 40px;
+    padding: 0 15px;
+    line-height: 32px;
+    font-size: 39px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: #451df8;
+    color: #79f7b8;  
+    
+}
+
+.bio-2{
+    
+	line-height: 1;
+    color: #fafafa;
+    font-family: 'Playfair Display', serif;
+    word-spacing: 0.2ch;
+    line-height: 1.4;
+}
+@media (max-width: 1480px){
+	header{
+		padding: 12px 2.5%;
+		transition: .1s;
+	}
+	header.sticky{
+		padding: 10px 2.5%;
+		transition: .1s;;
+	}
+	section{
+		padding: 110px 3% 60px;
+	}
+	
+}
+@media (max-width: 1100px){
+	:root{
+		--big-font: 4rem;
+	  --h2-font: 2.5rem;
+	  --p-font: 1rem;
+	  transition: .1s;
+	}
+	.bio-one{
+		font-size: 2.5rem;
+        line-height: 1.8;
+	}
+	.bio{
+		height: 100vh;
+	}
+}
+@media (max-width: 920px){ /*side navigation bar. body is used to hide bar which is out of bounds(out of screen)*/
+    #menu-icon{
+		display: block;
+	}
+    header{
+        background: #8a8989;
+        border-bottom: 1px solid #ffffff1a;
+        padding: 12px 15%;
+    }
+    body{
+        overflow-x: hidden;
+    }
+	.bio-navlist{
+		position: absolute;
+		top: 8vh;
+		right: 0;
+		
+		display: flex;
+		flex-direction: column;
+		background: #8a8989;
+		text-align: center;
+		transition: all .45s ease;
+        width: 40%;
+        transform: translateX(100%);/*Puts the bar 'outside' of the screen*/
+
+	}
+    .bio-img{
+		text-align: center;
+		order: 2;
+	}
+	.bio-img img{
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+	}
+	.bio-navlist a{
+		display: block;
+		margin: 17px;
+		font-size: 20px;
+		transition: all .45s ease;
+		color: var(--text-color);
+	}
+	.bio-navlist a:hover{
+		color: #79f7b8;
+	}
+	.bio-navlist-active{
+		transform: translateX(0%);
+        opacity: 10;
+        
+	}
+	.bio-navlist.open{
+		top: 100%;
+	}
+}
+
+
+/*Photos Style*/
+.container{
+    top: 8em;
+    position: relative;
+    min-height: 100vh;
+    background: #2a2a2a;
+}
+
+.container .image-container{
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+.container .image-container .image{
+    
+    height: 250px;
+    width: 350px;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    overflow: hidden;
+    cursor: pointer;
+}
+.container .image-container .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.container .image-container .image:hover img{
+    transform: scale(1.1);
+}
+
+.container .popup-img{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.container .popup-img span{
+    position: absolute;
+    top:0; right: 10px;
+    font-size: 60px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 100;
+
+}
+.container .popup-img img{
+    position: absolute;
+    top:50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #fcfcfc;
+    border-radius: 5px;
+    width: 750px;
+    object-fit: cover;
+}
+.pho-navlist{
+    display: flex;
+
+} 
+.pho-navlist a{
+    color: #fda847;
+    font-size: 17px;
+    font-weight: 750;
+    margin: 0 25px;
+    transition: all .40s ease;
+
+
+}
+.pho-navlist a:hover{
+    color: #e93131;
+}
+.pho-navlist a.active{
+    color: #e93131;
+}
+@media (max-width: 1480px){
+	header{
+		padding: 12px 2.5%;
+		transition: .1s;
+	}
+	header.sticky{
+		padding: 10px 2.5%;
+		transition: .1s;;
+	}
+	section{
+		padding: 110px 3% 60px;
+	}
+	
+}
+@media (max-width: 1100px){
+	:root{
+		--big-font: 4rem;
+	  --h2-font: 2.5rem;
+	  --p-font: 1rem;
+	  transition: .1s;
+	}
+	.bio-one{
+		font-size: 2.5rem;
+        line-height: 1.8;
+	}
+	.bio{
+		height: 100vh;
+	}
+}
+@media (max-width: 920px){ /*side navigation bar. body is used to hide bar which is out of bounds(out of screen)*/
+    #menu-icon{
+		display: block;
+	}
+    header{
+        background: #8a8989;
+        border-bottom: 1px solid #ffffff1a;
+        padding: 12px 15%;
+    }
+    body{
+        overflow-x: hidden;
+    }
+	.pho-navlist{
+		position: absolute;
+		top: 8vh;
+		right: 0;
+		
+		display: flex;
+		flex-direction: column;
+		background: #8a8989;
+		text-align: center;
+		transition: all .45s ease;
+        width: 40%;
+        transform: translateX(100%);/*Puts the bar 'outside' of the screen*/
+
+	}
+    .pho-img{
+		text-align: center;
+		order: 2;
+	}
+	.pho-img img{
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+	}
+	.pho-navlist a{
+		display: block;
+		margin: 17px;
+		font-size: 20px;
+		transition: all .45s ease;
+		color: var(--text-color);
+	}
+	.pho-navlist a:hover{
+		color: #e93131;
+	}
+	.pho-navlist-active{
+		transform: translateX(0%);
+        opacity: 10;
+        
+	}
+	.pho-navlist.open{
+		top: 100%;
+	}
+}
+@media (max-width:768px){
+    .container .popup-img img{
+       width: 95%; 
+    }
+
+}
+
+.unf1{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/lul1.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.unf2{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/lul2.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.unf3{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/lul3.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+
